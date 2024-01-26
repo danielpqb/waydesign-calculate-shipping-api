@@ -1,5 +1,5 @@
 async function calculateShippingValue(req, res) {
-  console.log("@BODY: " + req.body);
+  console.log("@BODY: " + JSON.stringify(req.body));
 
   const uf = req.body?.destination?.province;
   const items = req.body?.items;
@@ -37,7 +37,7 @@ async function calculateShippingValue(req, res) {
       break;
   }
 
-  console.log("@RESPONSE: " + res_obj);
+  console.log("@RESPONSE: " + JSON.stringify(res_obj));
 
   try {
     return res.status(200).send(res_obj);
