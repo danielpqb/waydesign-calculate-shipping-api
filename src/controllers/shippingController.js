@@ -1,14 +1,14 @@
 async function calculateShippingValue(req, res) {
   console.log("@BODY: " + JSON.stringify(req.body));
 
-  const uf = req.body?.destination?.province;
-  const items = req.body?.items;
+  const uf = req.body?.rate?.destination?.province;
+  const items = req.body?.rate?.items;
 
   console.log("@UF: " + uf);
 
   let total_price = 0;
   items?.forEach((e, idx) => {
-    total_price += e?.price;
+    total_price += e?.price * e?.quantity;
     console.log(`@ITEM[${idx}]: ` + e);
   });
 
