@@ -7,7 +7,7 @@ async function calculateShippingValue(req, res) {
   console.log("@UF: " + uf);
 
   let total_price = 0;
-  items.forEach((e, idx) => {
+  items?.forEach((e, idx) => {
     total_price += e?.price;
     console.log(`@ITEM[${idx}]: ` + e);
   });
